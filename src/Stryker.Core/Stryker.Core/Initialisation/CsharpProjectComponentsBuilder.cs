@@ -103,6 +103,13 @@ namespace Stryker.Core.Initialisation
                     encoding: Encoding.UTF32,
                     options: cSharpParseOptions);
 
+                if (sourceFile.EndsWith("xaml.cs"))
+                {
+                    _logger.LogDebug("Skipping xaml.cs file: {fileName}", file.FullPath);
+                    folderComposite.AddCompilationSyntaxTree(syntaxTree); // Add the syntaxTree to the list of compilationSyntaxTrees
+                    continue; // Don't add the file to the folderComposite as we're not reporting on the file
+                }
+
                 // don't mutate auto generated code
                 if (syntaxTree.IsGenerated())
                 {
