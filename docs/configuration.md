@@ -6,8 +6,6 @@ custom_edit_url: https://github.com/stryker-mutator/stryker-net/edit/master/docs
 
 ## Basics
 
-You run stryker from the test project directory.
-
 On some dotnet core projects stryker can run without specifying any custom configuration. Simply run `dotnet stryker` to start testing.  
 On dotnet framework projects the solution path argument is always required. Run at least `dotnet stryker --solution <solution-path>` or specify the solution file path in the config file to start testing. See [solution](#solution-path).
 
